@@ -1,0 +1,52 @@
+<style>
+
+.modal {
+	position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0,0,0,0.3);
+display: flex;
+align-items: center;;
+justify-content: center;
+}
+.container{
+
+	width:50%;
+	
+	padding:1rem 2rem;
+	border-radius: 12px;
+background-color: white;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+.btn-container{
+	text-align: right;
+	margin:1rem 0 0 0
+}
+.input{
+	width:100%;
+	padding:1rem;
+	border-radius: 12px;
+	border:1px solid #ececec;
+}
+
+</style>
+
+
+<div class="modal" *ngIf="modalService.isModalOpen">
+	<div class="container">
+
+	<h3>Add Todo</h3>
+
+	<div class="input-container">
+
+	<input (keyup.enter)="addTodo()"  [(ngModel)]="itemValue"  type="text" class="input" >
+	</div>
+	<div class="btn-container">
+		<button (click)="addTodo()" >Add</button>
+		<button (click)="cancel()"> Cancel</button>
+	</div>
+
+	</div>
+</div>

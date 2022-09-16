@@ -2,13 +2,14 @@
 	.container{
 		width:50%;
 		margin:auto;
+min-width: 300px;
 	}
 	.time {
 		text-align: center;
 	}
 	hr{
 		border:1px solid #ececec;
-		margin:2rem 0 4rem 0;
+		margin-top:2rem ;
 	}
 
 
@@ -17,8 +18,13 @@
 <div class="container">
 	<h2 class="time">{{ showDate() }}</h2>
 	<hr>
-<div *ngFor="let item of items">
+
+<button (click)="deleteMarkedTasks()"><img src="../assets/trash-check.svg" title="Delete checked tasks" srcset=""></button>
+<button (click)="clearAllTodos()"><img src="../assets/trash-2.svg" title="Delete all tasks" srcset=""></button>
+<div *ngFor="let item of modalService.items">
 
 <app-item [task]="item"></app-item>
 </div>
 </div>
+<app-floating-button></app-floating-button>
+<app-modal></app-modal>
