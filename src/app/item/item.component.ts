@@ -18,7 +18,6 @@ export class ItemComponent implements OnInit {
   }
   @Input() task: Task  = {id :'',name :'',isDone : false};
 handleCheck(task:Task):void{
-	console.log("hanle", task)
 	task.isDone = !task.isDone;
 	localStorage.setItem("items",JSON.stringify(this.modalService.items))
 }

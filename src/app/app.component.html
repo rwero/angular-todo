@@ -21,6 +21,7 @@ min-width: 300px;
 
 <button (click)="deleteMarkedTasks()"><img src="../assets/trash-check.svg" title="Delete checked tasks" srcset=""></button>
 <button (click)="clearAllTodos()"><img src="../assets/trash-2.svg" title="Delete all tasks" srcset=""></button>
+<button (click)="markAllChecked()"><img src="../assets/checked.svg"  title="Check all tasks" srcset=""></button>
 <div *ngFor="let item of modalService.items">
 
 <app-item [task]="item"></app-item>

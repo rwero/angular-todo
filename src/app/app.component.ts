@@ -24,4 +24,10 @@ clearAllTodos():void {
 	this.modalService.items =[];
 	localStorage.setItem("items","[]");
 }
+
+markAllChecked():void {
+	this.modalService.items.forEach((el:Task)=>{el.isDone =true});
+	localStorage.setItem("items", JSON.stringify(this.modalService.items));
+
+}
 }
